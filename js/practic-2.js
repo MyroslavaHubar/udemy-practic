@@ -19,38 +19,119 @@
 
 // Код возьмите из предыдущего домашнего задания
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-const personalMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false,
-};
+// const personalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false,
+// };
 
-for (let i = 0; i < 2; i++) {
-  const a = prompt('Один из последних просмотренных фильмов?', ''),
-    b = prompt('На сколько оцените его?', '');
+// for (let i = 0; i < 2; i++) {
+//   const a = prompt('Один из последних просмотренных фильмов?', ''),
+//     b = prompt('На сколько оцените его?', '');
 
-  if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-    personalMovieDB.movies[a] = b;
-    console.log('done'); /* for me */
-  } else {
-    console.log('error'); /* for me */
-    i--; /*если не выполнилось условие выше, 
-    мы снова задаем вопросы. как сказано в условии задачи. вернется цикл на 1 итерацию назад */
+//   if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//     personalMovieDB.movies[a] = b;
+//     console.log('done'); /* for me */
+//   } else {
+//     console.log('error'); /* for me */
+//     i--; /*если не выполнилось условие выше,
+//     мы снова задаем вопросы. как сказано в условии задачи. вернется цикл на 1 итерацию назад */
+//   }
+// }
+
+// if (personalMovieDB.count < 10) {
+//   console.log('Просмотрено довольно мало фильмов');
+// } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//   console.log('Вы классический зритель');
+// } else if (personalMovieDB.count >= 30) {
+//   console.log('Вы киноман');
+// } else {
+//   console.log('Произошла ошибка');
+// }
+
+// console.log(personalMovieDB);
+
+/*====================================================*/
+// Напишите функцию sum, которая работает таким образом: sum(a)(b) = a+b.
+
+// function sum(a) {
+//   return function (b) {
+//     return a + b;
+//   };
+// }
+
+// console.log(sum(1)(2)); // 3
+// console.log(sum(5)(-1)); // 4
+
+/*======================================*/
+//  Создайте функцию, которая будет на вход принимать
+// 1 аргумент с именем человека и возвращать строку.
+
+// function sayHello(name) {
+//   return `Hello, ${name}!`;
+// }
+// sayHello('Anton');
+
+/*=============================================*/
+// Создайте функцию, которая принимает в себя 1 аргумент
+// в виде целого числа и возвращает массив из трех чисел:
+// одно на 1 меньше, сам аргумент, и число на 1 больше.
+
+// Пример: вызов функции returnNeighboringNumbers(5)
+// возвращает массив в виде[4, 5, 6].
+
+// function returnNeighboringNumbers(num) {
+//   return [num - 1, num, num + 1];
+// }
+
+// returnNeighboringNumbers(5);
+
+/*=============================================*/
+// Создайте функцию, которая будет принимать в себя 2 аргумента,
+//  оба числа.Первое число - это база, второе число -
+// это сколько раз нужно будет повторить это число в прогрессии.
+// (Смотри пример ниже).Функция должна возвращать
+// строку(или число в особых случаях, о которых ниже),
+// где эти числа идут по порядку, разделенные тремя дефисами
+// "---".После последнего числа их не должно быть.
+
+// Если второй аргумент не является числом, равен или
+// меньше нуля - то возвращать просто первый аргумент.
+// (Проверяем через оператор typeof)
+
+// Примеры:
+
+// Вызов функции getMathResult(5, 3) даст ответ 5---10---15
+
+// Вызов функции getMathResult(3, 10) даст ответ 3---6---9---12---15---18---21---24---27---30
+
+// Вызов функции getMathResult(10, 5) даст ответ 10---20---30---40---50
+
+// Вызов функции getMathResult(10, '5') даст ответ 10
+
+// Вызов функции getMathResult(10, 0) даст ответ 10
+
+// Вызов функции getMathResult(20, -5) даст ответ 20
+
+function getMathResult(num, item) {
+  if (typeof item !== 'number' || item < 0) {
+    return num;
   }
+
+  let str = '';
+
+  for (let i = 1; i <= item; i++) {
+    if (i === item) {
+      str += `${num * i}`;
+    } else {
+      str += `${num * i}---`;
+    }
+  }
+  return str;
 }
 
-if (personalMovieDB.count < 10) {
-  console.log('Просмотрено довольно мало фильмов');
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-  console.log('Вы классический зритель');
-} else if (personalMovieDB.count >= 30) {
-  console.log('Вы киноман');
-} else {
-  console.log('Произошла ошибка');
-}
-
-console.log(personalMovieDB);
+getMathResult(10, 5);
