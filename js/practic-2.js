@@ -117,21 +117,23 @@
 
 // Вызов функции getMathResult(20, -5) даст ответ 20
 
-function getMathResult(num, item) {
-  if (typeof item !== 'number' || item < 0) {
-    return num;
-  }
+// function getMathResult(num, item) {
+//   if (typeof item !== 'number' || item < 0) {
+//     return num;
+//   }
 
-  let str = '';
+//   let str = '';
 
-  for (let i = 1; i <= item; i++) {
-    if (i === item) {
-      str += `${num * i}`;
-    } else {
-      str += `${num * i}---`;
-    }
-  }
-  return str;
-}
+//   for (let i = 1; i <= item; i++) {
+//     if (i === item) {
+//       str += `${num * i}`;
+//     } else {
+//       str += `${num * i}---`;
+//     }
+//   }
+//   return str;
+// }
 
-getMathResult(10, 5);
+// getMathResult(10, 5);
+
+/*=============================================*/
