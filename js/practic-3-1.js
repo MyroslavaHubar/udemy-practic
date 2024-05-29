@@ -201,3 +201,37 @@ fib(0) => ''"
 // function fib(n) {
 //   return n <= 1 ? n : fib(n - 1) + fib(n - 2);
 // }
+
+// function fibonacciSeries(value) {
+//   if (value <= 0) return '';
+//   if (value === 1) return '0';
+//   if (value === 2) return '0 0';
+
+//   let fibNumber = [0, 0, 1];
+//   for (let i = 3; i < value; i++) {
+//     let nextNumber = fibNumber[i - 1] + fibNumber[i - 2];
+//     fibNumber.push(nextNumber);
+//   }
+//   return fibNumber.slice(0, value).join(' ');
+// }
+
+// console.log(fibonacciSeries(7));
+
+/*=========*/
+
+// function fibonacciSeries2(value) {
+//   if (value <= 0) return '';
+//   if (value === 1) return '1';
+//   if (value === 2) return '1 1';
+
+//   let fibNumber = [1, 1];
+//   for (let i = 2; i < value; i++) {
+//     let nextNumber = fibNumber[i - 1] + fibNumber[i - 2];
+//     fibNumber.push(nextNumber);
+//   }
+//   return fibNumber.slice(0, value).join(' ');
+// }
+
+// console.log(fibonacciSeries2(7));
+
+/*=========*/
